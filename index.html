@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() { //diese Daten sind da, um eine Anfrage zuerst zu laden, bevor die Seite geladen wird
+        $("#btn").click(function() { //wenn auf den button gecklickt wird, wird folgendes ausgelöst
+            $("#test").load("data.txt", {Name: "Daniel", //wenn #btn gecklickt wird, wird der div #test ausgelöst, und die Textdatei hervorgehoben
+            Lastname: "Nielsen"},
+            function() {
+                alert("Hello there"); //eine Callback Funktion wird ausgelöst
+            }
+            );
+    });
+});
+    </script>
+
+
+</head>
+<body>
+    <div id="test">
+        <p>This is the first content!</p>
+    </div>
+    <button id="btn">Click to change</button>
+
+
+
+
+</body>
+</html>
